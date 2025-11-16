@@ -560,7 +560,7 @@
 
       governorateSelect.addEventListener('change', function() {
         const selectedGovernorate = this.value;
-        citySelect.innerHTML = '<option value="">Select / اختر</option>';
+        citySelect.innerHTML = '<option value="">Select</option>';
 
         if (selectedGovernorate && cityData[selectedGovernorate]) {
           citySelect.disabled = false;
