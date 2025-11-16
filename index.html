@@ -38,57 +38,6 @@
         margin: 0;
         line-height: 1.6;
         animation: fadeIn 0.7s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-        position: relative;
-        overflow-x: hidden;
-      }
-
-      body::before {
-        content: '';
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background:
-          radial-gradient(circle at 20% 50%, rgba(235, 89, 13, 0.03) 0%, transparent 50%),
-          radial-gradient(circle at 80% 80%, rgba(23, 154, 233, 0.03) 0%, transparent 50%),
-          radial-gradient(circle at 40% 20%, rgba(17, 24, 39, 0.02) 0%, transparent 50%);
-        pointer-events: none;
-        animation: floatBackground 20s ease-in-out infinite;
-        z-index: -1;
-      }
-
-      @keyframes floatBackground {
-        0% {
-          background:
-            radial-gradient(circle at 20% 50%, rgba(235, 89, 13, 0.03) 0%, transparent 50%),
-            radial-gradient(circle at 80% 80%, rgba(23, 154, 233, 0.03) 0%, transparent 50%),
-            radial-gradient(circle at 40% 20%, rgba(17, 24, 39, 0.02) 0%, transparent 50%);
-        }
-        25% {
-          background:
-            radial-gradient(circle at 25% 45%, rgba(235, 89, 13, 0.03) 0%, transparent 50%),
-            radial-gradient(circle at 75% 85%, rgba(23, 154, 233, 0.03) 0%, transparent 50%),
-            radial-gradient(circle at 45% 25%, rgba(17, 24, 39, 0.02) 0%, transparent 50%);
-        }
-        50% {
-          background:
-            radial-gradient(circle at 30% 40%, rgba(235, 89, 13, 0.03) 0%, transparent 50%),
-            radial-gradient(circle at 70% 90%, rgba(23, 154, 233, 0.03) 0%, transparent 50%),
-            radial-gradient(circle at 50% 30%, rgba(17, 24, 39, 0.02) 0%, transparent 50%);
-        }
-        75% {
-          background:
-            radial-gradient(circle at 25% 55%, rgba(235, 89, 13, 0.03) 0%, transparent 50%),
-            radial-gradient(circle at 75% 75%, rgba(23, 154, 233, 0.03) 0%, transparent 50%),
-            radial-gradient(circle at 45% 35%, rgba(17, 24, 39, 0.02) 0%, transparent 50%);
-        }
-        100% {
-          background:
-            radial-gradient(circle at 20% 50%, rgba(235, 89, 13, 0.03) 0%, transparent 50%),
-            radial-gradient(circle at 80% 80%, rgba(23, 154, 233, 0.03) 0%, transparent 50%),
-            radial-gradient(circle at 40% 20%, rgba(17, 24, 39, 0.02) 0%, transparent 50%);
-        }
       }
 
       @keyframes fadeIn {
@@ -116,15 +65,13 @@
         margin: 0 auto;
         padding: 24px 16px;
         animation: slideUp 0.65s cubic-bezier(0.25, 0.46, 0.45, 0.94) backwards;
-        position: relative;
-        z-index: 1;
       }
 
       .logo-container {
         text-align: center;
         margin-bottom: 40px;
         padding: 48px 24px 32px;
-        background: linear-gradient(135deg, #f3f8fd 0%, #e8f4fd 100%);
+        background: var(--surface);
         border-radius: 0 0 24px 24px;
         box-shadow: 0 4px 16px rgba(17, 24, 39, 0.08);
         animation: slideUp 0.65s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.1s backwards;
@@ -443,7 +390,7 @@
     <div class="container">
       <div class="logo-container">
         <img src="/favicon.png" alt="Payless Logo" class="logo-image">
-        <div class="logo-tagline">Join Our Growing Team</div>
+        <div class="logo-tagline">انضم إلى فريقنا المتنامي | Join Our Growing Team</div>
       </div>
 
       <div class="form-container">
@@ -458,7 +405,7 @@
             <label for="fullName">
               <span class="label-en">Full Name</span>
               <span class="required">*</span>
-              <span class="label-ar">الإسم كامل</span>
+              <span class="label-ar">الاسم كامل</span>
             </label>
             <input type="text" id="fullName" name="fullName" required />
           </div>
@@ -488,7 +435,7 @@
               <span class="label-ar">المحافظة</span>
             </label>
             <select id="governorate" name="governorate" required>
-              <option value="">Select</option>
+              <option value="">Select / اختر</option>
               <option value="Cairo">Cairo / القاهرة</option>
               <option value="Giza">Giza / الجيزة</option>
             </select>
@@ -501,7 +448,7 @@
               <span class="label-ar">المدينة</span>
             </label>
             <select id="city" name="city" required disabled>
-              <option value="">Select governorate first</option>
+              <option value="">Select governorate first / اختر المحافظة أولاً</option>
             </select>
           </div>
 
@@ -512,7 +459,7 @@
               <span class="label-ar">النوع</span>
             </label>
             <select id="gender" name="gender" required>
-              <option value="">Select</option>
+              <option value="">Select / اختر</option>
               <option value="Male">Male / ذكر</option>
               <option value="Female">Female / أنثى</option>
             </select>
@@ -525,7 +472,7 @@
               <span class="label-ar">المؤهل الدراسي</span>
             </label>
             <select id="educationLevel" name="educationLevel" required>
-              <option value="">Select</option>
+              <option value="">Select / اختر</option>
               <option value="High School">High School / الثانوية العامة</option>
               <option value="Diploma">Diploma / دبلوم</option>
               <option value="Bachelor">Bachelor / بكالوريوس</option>
@@ -550,7 +497,7 @@
               <span class="label-ar">هل أنت جاهز للعمل في الحال؟</span>
             </label>
             <select id="availableImmediately" name="availableImmediately" required>
-              <option value="">Select</option>
+              <option value="">Select / اختر</option>
               <option value="Yes">Yes / نعم</option>
               <option value="No">No / لا</option>
             </select>
@@ -563,7 +510,7 @@
               <span class="label-ar">هل لديك شخص مناسب ويمكنك ترشيحه؟</span>
             </label>
             <select id="hasRecommendation" name="hasRecommendation" required>
-              <option value="">Select</option>
+              <option value="">Select / اختر</option>
               <option value="Yes">Yes / نعم</option>
               <option value="No">No / لا</option>
             </select>
@@ -613,7 +560,7 @@
 
       governorateSelect.addEventListener('change', function() {
         const selectedGovernorate = this.value;
-        citySelect.innerHTML = '<option value="">Select</option>';
+        citySelect.innerHTML = '<option value="">Select / اختر</option>';
 
         if (selectedGovernorate && cityData[selectedGovernorate]) {
           citySelect.disabled = false;
@@ -625,7 +572,7 @@
           });
         } else {
           citySelect.disabled = true;
-          citySelect.innerHTML = '<option value="">Select governorate first / إختر المحافظة أولاً</option>';
+          citySelect.innerHTML = '<option value="">Select governorate first / اختر المحافظة أولاً</option>';
         }
         citySelect.value = '';
       });
@@ -686,7 +633,7 @@
           showMessage('تم استقبال طلبك وهيتم الرد عليك خلال ٢٤ ساعة من خلال واتساب أو مكالمة هاتفية.', 'success');
           form.reset();
           citySelect.disabled = true;
-          citySelect.innerHTML = '<option value="">Select governorate first / إختر المحافظة أولاً</option>';
+          citySelect.innerHTML = '<option value="">Select governorate first / اختر المحافظة أولاً</option>';
           recommendedNameGroup.classList.add('hidden');
           recommendedPhoneGroup.classList.add('hidden');
 
@@ -695,7 +642,7 @@
           showMessage('تم استقبال طلبك وهيتم الرد عليك خلال ٢٤ ساعة من خلال واتساب أو مكالمة هاتفية.', 'success');
           form.reset();
           citySelect.disabled = true;
-          citySelect.innerHTML = '<option value="">Select governorate first / إختر المحافظة أولاً</option>';
+          citySelect.innerHTML = '<option value="">Select governorate first / اختر المحافظة أولاً</option>';
           recommendedNameGroup.classList.add('hidden');
           recommendedPhoneGroup.classList.add('hidden');
         } finally {
